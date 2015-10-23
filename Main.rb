@@ -38,7 +38,6 @@ if mode.empty? || mode == 'linkedlist'
   # 11 -> 22 -> 33 -> 44 -> 55
 
   list = LinkedList.new
-
   list.add(11)
   list.add(22)
   list.add(33)
@@ -46,7 +45,44 @@ if mode.empty? || mode == 'linkedlist'
   list.add(55)
 
   p list.to_s
+  list.insert(25, 3)
+  p list.to_s
 
+  while true
+    p "Insert Node"
+    print "Enter Node: "
+    input = gets.chomp
+    if input != 'stop'
+      data = input.to_i
+    else
+      break
+    end
+
+    print "Enter Position: "
+    input = gets.chomp
+    if input != 'stop'
+      position = input.to_i
+    else
+      break
+    end
+
+    list.insert(data, position)
+    p list.to_s
+  end
+
+  while true
+    p "Remove Node"
+    print "Enter Position: "
+    input = gets.chomp
+    if input != 'stop'
+      position = input.to_i
+    else
+      break
+    end
+
+    list.remove(position)
+    p list.to_s
+  end
 
 
 end
