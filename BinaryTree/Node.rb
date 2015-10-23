@@ -5,8 +5,7 @@ class Node
   def initialize(data = nil)
     @@count = @@count + 1
     @data = data
-    p 'creating node'
-    p data
+    p "Node created: #{@data}"
   end
 
   def get_data
