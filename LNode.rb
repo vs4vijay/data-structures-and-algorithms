@@ -1,6 +1,5 @@
 class LNode
   attr_accessor :data, :next
-
   @@size = 0
 
   def initialize(data = 0)

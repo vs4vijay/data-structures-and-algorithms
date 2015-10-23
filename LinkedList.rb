@@ -1,4 +1,4 @@
-require './LinkedList/LNode.rb'
+require './LNode.rb'
 
 class LinkedList
 
@@ -61,6 +61,18 @@ class LinkedList
       next_node = node.next
       prev_node.next = next_node
     end
+  end
+
+  def reverse
+    temp = nil
+    next_node = nil
+    while !@head.nil?
+      next_node = @head.next
+      @head.next = temp
+      temp = @head
+      @head = next_node
+    end
+    @head = temp
   end
 
   def to_s

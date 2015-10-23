@@ -7,9 +7,9 @@ class BinaryTree
   def self.inorder_traversal (root)
 
     if !root.nil?
-      self.inorder_traversal(root.get_left)
-      p root.get_data
-      self.inorder_traversal(root.get_right)
+      self.inorder_traversal(root.left)
+      p root.data
+      self.inorder_traversal(root.right)
     end
 
   end
@@ -21,12 +21,12 @@ class BinaryTree
       queue.push root
       while !queue.empty?
         node = queue.shift
-        p node.get_data
-        if !node.get_left.nil?
-          queue.push(node.get_left)
+        p node.data
+        if !node.left.nil?
+          queue.push(node.left)
         end
-        if !node.get_right.nil?
-          queue.push(node.get_right)
+        if !node.right.nil?
+          queue.push(node.right)
         end
       end
     end
@@ -36,8 +36,8 @@ class BinaryTree
     if root.nil?
       return 0
     else
-      left_height = get_height(root.get_left)
-      right_height = get_height(root.get_right)
+      left_height = get_height(root.left)
+      right_height = get_height(root.right)
       if left_height > right_height
         left_height + 1
       else

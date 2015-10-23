@@ -1,11 +1,11 @@
 # Solutions to some common data structure problems in ruby
 # Auther: Vijay Soni (vs4vijay@gmail.com)
 
-require './BinaryTree/Node.rb'
-require './BinaryTree/BinaryTree.rb'
+require './Node.rb'
+require './BinaryTree.rb'
 
-require './LinkedList/LNode.rb'
-require './LinkedList/LinkedList.rb'
+require './LNode.rb'
+require './LinkedList.rb'
 
 mode = 'linkedlist'  # can be 'binarytree', 'linkedlist'
 
@@ -18,13 +18,13 @@ if mode.empty? || mode == 'binarytree'
 
   root = Node.new 1
 
-  root.set_left Node.new 2
-  root.set_right Node.new 3
+  root.left = Node.new 2
+  root.right = Node.new 3
 
-  root.get_left.set_left Node.new 4
-  root.get_left.set_right Node.new 5
-  root.get_right.set_left Node.new 6
-  root.get_right.set_right Node.new 7
+  root.left.left = Node.new 4
+  root.left.right = Node.new 5
+  root.right.left = Node.new 6
+  root.right.right = Node.new 7
 
   p BinaryTree.print root
   p 'Height: ' + (BinaryTree.get_height root).to_s
@@ -46,6 +46,9 @@ if mode.empty? || mode == 'linkedlist'
 
   p list.to_s
   list.insert(25, 3)
+  p list.to_s
+
+  list.reverse
   p list.to_s
 
   while true
@@ -70,7 +73,7 @@ if mode.empty? || mode == 'linkedlist'
     p list.to_s
   end
 
-  while true
+  while !true
     p "Remove Node"
     print "Enter Position: "
     input = gets.chomp
